@@ -1,0 +1,6 @@
+[package]
+name = "rust-filemanager"
+version = "0.1.0"
+authors = ["Morindhal <Morindhal@gmail.com>"]
+
+[dependencies]
