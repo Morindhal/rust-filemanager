@@ -13,4 +13,6 @@ fn main()
     let path = Path::new("/home/");
     let mut displaytype = rfcs::DisplayType{ ..Default::default() };
     rfcf::printout(path, displaytype);
+    println!("{:?}", displaytype);
+    println!("Compact info about what to display : {}", displaytype);
 }
