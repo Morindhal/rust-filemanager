@@ -1,46 +1,16 @@
 extern crate filemanager_core;
 
 use std::path::Path;
-// rfc is (R)ust (F)ilemanager (C)ore
-use filemanager_core::filemanager_core_functions as rfc;
+// rfcf is (R)ust (F)ilemanager (C)ore (F)unctions
+use filemanager_core::filemanager_core_functions as rfcf;
+// rfcs is (R)ust (F)ilemanager (C)ore (S)tructs
+use filemanager_core::filemanager_core_structs as rfcs;
 
-
-struct DisplayType
-{
-    show_folder: bool,
-    _show_hidden: bool, //This will likely be a OS-specific thing later, so at this time it is unimplemented.
-    show_files: bool,
-}
 
 
 fn main()
 {
     let path = Path::new("/home/");
-    let displaytype = DisplayType{show_folder: true, _show_hidden: false, show_files: true};
-    printout(path, displaytype);
-    println!("Library mod: {}", rfc::hello());
+    let mut displaytype = rfcs::DisplayType{ ..Default::default() };
+    rfcf::printout(path, displaytype);
 }
-
-fn printout(path:  &std::path::Path, displaytype: DisplayType)
-{
-    match path.read_dir()
-    {
-        Err(e) =>  println!("{}",e),
-        Ok(k) => for paths in k
-        {
-            match paths 
-            {
-                Err(e2) =>  println!("{}",e2),
-                Ok(k2) =>
-                    if k2.path().is_dir() && displaytype.show_folder { println!("{} <-- folder",k2.path().file_name().unwrap().to_str().unwrap()) }
-                    else if k2.path().is_file() && displaytype.show_files { println!("{} <-- file",k2.path().display()) }
-            }
-        }
-    }
-}
-
-/*
-* notes:
-* .path().file_name().unwrap().to_str().unwrap()            <-- gets the filename, add try! or match code instead of unwrap when used -- 
-* 
-**/
