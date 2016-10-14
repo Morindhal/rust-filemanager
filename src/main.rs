@@ -17,7 +17,7 @@ fn main()
     let path = Path::new("/home/");
     let displaytype = DisplayType{show_folder: true, show_hidden: false, show_files: true};
     printout(path, displaytype);
-    println!("Library mod: {}", filemanager-core::hello());
+    println!("Library mod: {}", filemanager_core::hello());
 }
 
 fn printout(path:  &std::path::Path, displaytype: DisplayType)
