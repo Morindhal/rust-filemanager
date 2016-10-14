@@ -1,3 +1,4 @@
+#![allow(dead_code)] 
 pub mod filemanager_core_functions;
 
 

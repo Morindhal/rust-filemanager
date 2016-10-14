@@ -8,7 +8,7 @@ use filemanager_core::filemanager_core_functions as rfc;
 struct DisplayType
 {
     show_folder: bool,
-    show_hidden: bool, //This will likely be a OS-specific thing later, so at this time it is unimplemented.
+    _show_hidden: bool, //This will likely be a OS-specific thing later, so at this time it is unimplemented.
     show_files: bool,
 }
 
@@ -16,7 +16,7 @@ struct DisplayType
 fn main()
 {
     let path = Path::new("/home/");
-    let displaytype = DisplayType{show_folder: true, show_hidden: false, show_files: true};
+    let displaytype = DisplayType{show_folder: true, _show_hidden: false, show_files: true};
     printout(path, displaytype);
     println!("Library mod: {}", rfc::hello());
 }
