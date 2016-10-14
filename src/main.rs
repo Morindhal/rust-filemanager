@@ -27,9 +27,15 @@ fn printout(path:  &std::path::Path, displaytype: DisplayType)
             {
                 Err(e2) =>  println!("{}",e2),
                 Ok(k2) =>
-                    if k2.path().is_dir() && displaytype.show_folder { println!("{} <-- folder",k2.path().display()) }
+                    if k2.path().is_dir() && displaytype.show_folder { println!("{} <-- folder",k2.path().file_name().unwrap().to_str().unwrap()) }
                     else if k2.path().is_file() && displaytype.show_files { println!("{} <-- file",k2.path().display()) }
             }
         }
     }
 }
+
+/*
+* notes:
+* .path().file_name().unwrap().to_str().unwrap()            <-- gets the filename, add try! or match code instead of unwrap when used -- 
+* 
+**/
