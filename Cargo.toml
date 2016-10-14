@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["Morindhal <Morindhal@gmail.com>"]
 
 [dependencies]
+filemanager_core = { path = "filemanager_core" }

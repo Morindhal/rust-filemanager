@@ -1,4 +1,4 @@
-mod filemanager_core;
+pub mod filemanager_core_functions;
 
 
 /*

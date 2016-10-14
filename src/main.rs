@@ -1,7 +1,8 @@
 extern crate filemanager_core;
 
 use std::path::Path;
-
+// rfc is (R)ust (F)ilemanager (C)ore
+use filemanager_core::filemanager_core_functions as rfc;
 
 
 struct DisplayType
@@ -17,7 +18,7 @@ fn main()
     let path = Path::new("/home/");
     let displaytype = DisplayType{show_folder: true, show_hidden: false, show_files: true};
     printout(path, displaytype);
-    println!("Library mod: {}", filemanager_core::hello());
+    println!("Library mod: {}", rfc::hello());
 }
 
 fn printout(path:  &std::path::Path, displaytype: DisplayType)

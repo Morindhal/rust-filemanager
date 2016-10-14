@@ -1,6 +1,7 @@
 [package]
-name = "filemanager-core"
+name = "filemanager_core"
 version = "0.1.0"
 authors = ["Morindhal <Morindhal@gmail.com>"]
+
 
 [dependencies]
