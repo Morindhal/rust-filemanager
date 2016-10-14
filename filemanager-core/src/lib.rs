@@ -1,5 +1,5 @@
 
-mod filemanager-core;
+mod filemanager_core;
 
 #[cfg(test)]
 mod tests {

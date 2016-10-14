@@ -1,9 +1,3 @@
-
-mod filemanager-core;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-    }
+fn hello() -> String {
+    "Hello!".to_string()
 }
